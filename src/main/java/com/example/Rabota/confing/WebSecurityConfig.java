@@ -23,7 +23,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http
             .authorizeRequests()
             .antMatchers("/registration").permitAll()
-            //.antMatchers("/blog").permitAll()
             .anyRequest().authenticated()
             .and()
             .formLogin()
@@ -35,11 +34,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-        /*auth.userDetailsService(userService)
-                .passwordEncoder(passwordEncoder);*/
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
-                //.passwordEncoder(passwordEncoder)
                 .passwordEncoder(NoOpPasswordEncoder.getInstance())
                 .usersByUsernameQuery("select username, password, active from user where username=?")
                 .authoritiesByUsernameQuery("select u.username, ur.roles from user u inner join user_role ur on u.id = ur.user_id" +
