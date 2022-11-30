@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПР5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body background="https://phonoteka.org/uploads/posts/2021-04/1618373415_45-phonoteka_org-p-abstraktnie-foni-dlya-rabochego-stola-48.jpg">
+<h1 style="text-align: center;color: white" > Редактировать преподавателя</h1>
+    <form  th:action = "@{/Teacher/{id}/edit(id=${teacher.id})}" method="post" th:object="${teacher}" class="col-md-2" >
+    <label> Фамилия преподавателя</label>
+    <input  th:field="*{surname}" th:value="${teacher.getSurname()}"  class="form-control"  type="text" name="surname" >
+    <div style="color: white" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div><br>
+
+    <label> Имя преподавателя</label>
+    <input  th:field="*{name}" th:value="${teacher.getName()}" class="form-control" type="text" name="name" >
+    <div style="color: white" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div><br>
+
+    <label> Отчество преподавателя</label>
+    <input  th:field="*{middlename}" th:value="${teacher.getMiddlename()}" class="form-control" type="text" name="middlename" >
+    <div style="color: white" th:if="${#fields.hasErrors('middlename')}" th:errors="*{middlename}"></div><br>
+
+    <label> Дата рождения</label>
+    <input th:field="*{bthday}" th:value="${teacher.getBthday()}" class="form-control" type="date" name="bthday" >
+    <div style="color: white" th:if="${#fields.hasErrors('bthday')}" th:errors="*{bthday}"></div><br>
+
+    <label> Год начала преподавания</label>
+    <input  th:field="*{yearprepodav}" th:value="${teacher.getYearprepodav()}" class="form-control" type="text" name="yearprepodav" >
+    <div style="color: white" th:if="${#fields.hasErrors('yearprepodav')}" th:errors="*{yearprepodav}"></div><br>
+        <button style="color: white" class="btn btn-warning" type="submit">Сохранить изменения</button>
+    </form>
+</body>
+</html>

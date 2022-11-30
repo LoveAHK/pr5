@@ -1,0 +1,19 @@
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>ПР5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body background="https://phonoteka.org/uploads/posts/2021-04/1618373415_45-phonoteka_org-p-abstraktnie-foni-dlya-rabochego-stola-48.jpg">
+<div th:if="${#messages}" style="color: white">
+    <p th:text="${message}"></p>
+</div >
+<div style="color: white"> Регистрация нового пользователя</div>
+<form th:action="@{/registration}" method="post" class="col-md-2">
+    <div style="color: white"><label> Логин : <input type="text" class="form-control" name="username"/> </label></div>
+    <div style="color: white"><label> Пароль: <input type="password" class="form-control"  name="password"/> </label></div><br>
+    <div style="color: white"><button type="submit" style="color: white" class="btn btn-warning"/>Вход</div>
+</form>
+</body>
+</html>

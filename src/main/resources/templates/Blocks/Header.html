@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div>
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/Teach" class="nav-link px-2 link-white" style="color: white" >Сотрудники</a></li>
+          <li><a href="/" class="nav-link px-2 link-white" style="color: white">Человек</a></li>
+          <li><a href="Users" class="nav-link px-2 link-white" style="color: white">Пользователи(OneToOne)</a></li>
+          <li><a href="/Pasport" class="nav-link px-2 link-white" style="color: white"> Паспорт</a></li>
+          <li><a href="/Address" class="nav-link px-2 link-white" style="color: white"> Адресс</a></li>
+          <li><a href="/University" class="nav-link px-2 link-white" style="color: white"> Заведения</a></li>
+          <form th:action="@{/logout}" method="post">
+              <input style="color: white; align: right; text-align: center;" size="25" type="submit" value="Выйти" class="btn btn-primary">
+          </form>
+      </ul>
+      <!--<div class="col-md-3 text-end">
+          <form th:action="@{/logout}" method="post">
+              <input style="color: white;text-align: center;margin-bottom: 20px;height: 20px;width: 150px" size="25" type="submit" value="Выйти" class="btn btn-primary">
+          </form>
+      </div>-->
+  </header>
+</div>
+
+
+</body>
+</html>

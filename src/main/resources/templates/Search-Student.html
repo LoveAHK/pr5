@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ПР5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body background="https://phonoteka.org/uploads/posts/2021-04/1618373415_45-phonoteka_org-p-abstraktnie-foni-dlya-rabochego-stola-48.jpg">
+<h1  style="text-align: center;color: white"> Поиск студента</h1>
+<form method="post" th:action="${'/Search/Student-result'}" class="col-md-2">
+    <input class="form-control"  type="text" name="lastname">
+    <button style="color: white" class="btn btn-warning" type="submit" >Точное сопадение</button>
+</form>
+    <form method="post" th:action="${'/Search/Student'}" class="col-md-2">
+        <input class="form-control"  type="text" name="lastname">
+        <button style="color: white" class="btn btn-warning" type="submit;height: 20px;width: 150px">Не точное сопадение</button>
+    </form>
+    <tbody>
+    <tr th:each="el : ${result}">
+        <h3 th:text="${el.getLastname()}" ></h3>
+        <p th:text="${el.getName()}"></p>
+        <p th:text="${el.getMiddlename()}"></p>
+        <p th:text="${el.getBirthday()}"></p>
+        <p th:text="${el.getGroupp()}"></p>
+    </tr>
+    </tbody>
+
+</body>
+</html>
